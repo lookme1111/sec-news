@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2><i class="fas fa-bug"></i> CVE Â©¶´ÁÐ±í</h2>
+<table class="table table-striped mt-3">
+  <thead><tr><th>CVE</th><th>CVSS</th><th>Severity</th><th>Published</th><th>Summary</th></tr></thead>
+  <tbody>
+  {% for cve in cve_list %}
+    <tr id="{{ cve.cve_id }}">
+      <td><span class="badge bg-danger">{{ cve.cve_id }}</span></td>
+      <td>{{ cve.cvss_score }}</td>
+      <td>{{ cve.severity }}</td>
+      <td>{{ cve.published_date }}</td>
+      <td>{{ cve.summary[:160] }}...</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

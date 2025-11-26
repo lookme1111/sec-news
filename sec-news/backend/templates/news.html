@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>全部资讯</h2>
+<div id="news-list">
+  {% for news in news_list %}
+  <div class="card mb-3 news-item">
+    <div class="card-body">
+      <h5 class="card-title">{{ news.title }}</h5>
+      <p class="card-text"><a href="{{ news.url }}" target="_blank">链接</a></p>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
